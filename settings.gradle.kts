@@ -22,5 +22,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MVVMCore"
-include(":app")
+include(":core")
  
