@@ -1,0 +1,9 @@
+jdk:
+  - openjdk17     # 强制使用 Java 17
+
+before_install:
+  - chmod +x gradlew   # 确保 gradlew 有执行权限
+
+# 可选：自定义构建命令（默认会自动检测）
+# install:
+#   - ./gradlew clean publishToMavenLocal
