@@ -47,4 +47,11 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity()  {
         val model = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application))[modelCass]
         return model
     }
+
+    inline fun <reified T : ViewModel> getViewModel(factory: ViewModelProvider.Factory? = null) =
+        if (factory != null) {
+            ViewModelProvider(this, factory)[T::class.java]
+        } else {
+            ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application))[T::class.java]
+        }
 }

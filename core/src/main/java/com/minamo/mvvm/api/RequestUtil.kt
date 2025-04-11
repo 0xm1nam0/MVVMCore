@@ -190,7 +190,7 @@ object RequestUtil {
                 //token失效
                 requestHandleCallback?.logout()
             }
-            requestHandleCallback?.handleResponse(response)!! -> {
+            requestHandleCallback?.handleResponse(response) == true -> {
             }
             else -> {
                 LogUtils.eTag(TAG, response.toJson())
